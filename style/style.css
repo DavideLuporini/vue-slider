@@ -1,6 +1,7 @@
 .slider {
     height: 500px;
     position: relative;
+    border: blue solid 2px;
 }
 
 [class*='fa-angle'] {
