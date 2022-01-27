@@ -16,25 +16,40 @@ Bonus:
 2- quando il mouse va in hover sulle freccette o sui pallini l'autoplay si interrompe
 3 - l'autoplay riparte quando il mouse lascia le freccette o i pallini
 */
+
+
 var app = new Vue({
-    el: '#root',
+    el: "#root",
     data: {
         // creo un contatore per le immagini
         currentImg: 0,
         // creo un array di oggetti per le immagini
         images: [{
-
-                img: "images/image1.jpg",
+                img: "img/image1.jpg",
             },
             {
-                img: "images/image2.jpg",
+                img: "img/image2.jpg",
             },
             {
-                img: "images/image3.jpg",
+                img: "img/image3.jpg",
             },
             {
-                img: "images/image4.jpg",
+                img: "img/image4.jpg",
             },
         ],
+    },
+    methods: {
+        // assegno a ogni immagine l'indice che ho dichiarato prima
+        actualImg(i) {
+            this.currentImg = i;
+        },
+
+        // creo una funzione che associ l'immagine all'indice , così da poter avere la singola immagine nello schermo
+        isActive(i) {
+            if (this.currentImg === i) {
+                return true;
+            }
+            return false;
+        },
     }
 })
