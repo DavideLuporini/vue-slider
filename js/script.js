@@ -51,5 +51,21 @@ var app = new Vue({
             }
             return false;
         },
-    }
+        //creo una funzione che mi riporti all'immagine successiva
+        followingImg() {
+            if (this.currentImg === this.images.length - 1) {
+                this.currentImg = 0;
+            } else {
+                this.currentImg++;
+            }
+        },
+        // creo una funzione che mi porti all'immagine precedente
+        previousImg() {
+            if (this.currentImg === 0) {
+                this.currentImg = this.images.length - 1;
+            } else {
+                this.currentImg--;
+            }
+        },
+    },
 })
